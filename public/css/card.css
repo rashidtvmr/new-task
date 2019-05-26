@@ -1,0 +1,121 @@
+.post {
+    border-radius: 10px;
+    position: relative;
+    width: 90%;
+    overflow: auto;
+    flex-wrap: inherit;
+    margin: auto;
+    margin-top: 5px;
+    height: 70vh;
+}
+
+.post-profile {
+    height: auto;
+}
+
+.profile-image {
+
+    display: inline-block;
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.profile-image-img {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.profile-name {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.post-body {
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+}
+
+.post-body-img img {
+    width: 100%;
+    height: 200px;
+}
+
+.post-footer {
+    width: 100%;
+    height: 3%;
+    text-align: center;
+
+}
+
+.cmt-form {
+
+    width: 100%;
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.cmtbtn,
+.showCmtBtn {
+    font-size: 16px;
+    font-weight: bolder;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.posted-cmt {
+    display: none;
+}
+
+.posted-cmt ul li {
+    margin: 2px;
+    list-style: none;
+    display: block;
+    z-index: 0;
+    background: rgb(243, 240, 240);
+}
+
+.posted-cmt ul li:hover {
+    border-radius: 5px;
+
+    box-shadow: 0px 1px 5px 4px #969595;
+    background: rgb(243, 240, 240);
+}
+
+@media(min-width:50rem) {
+    .post-footer {
+        width: 100%;
+        height: 5%;
+        text-align: center;
+
+    }
+
+    .post-body-img img {
+        width: 100%;
+        height: 450px;
+    }
+
+
+    .post {
+        margin: auto;
+        margin-top: 5px;
+        width: 50%;
+        height: auto;
+    }
+
+    .profile-image {
+        display: inline-block;
+        max-height: 50px;
+        max-width: 50px;
+    }
+
+    .profile-image-img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .profile-name {
+        display: inline-block;
+    }
+}

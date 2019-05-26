@@ -1,0 +1,12 @@
+<div class="model shadow">
+    <p>Login</p>
+    <% if(error){%>
+    <div class="alert-sm alert-danger"><%=error%></div>
+    <%}%>
+    <hr>
+    <form action="/user/signup" method="POST">
+        <input type="text" name="uname" class="m-3 rounded" placeholder="Username" style="display: inline-block">
+        <input type="submit" class="go-to-home btn btn-primary mt-4 m-auto" style="display:block" value="Submit"
+            style="border-radius: 10px;">
+    </form>
+</div>

@@ -1,7 +1,20 @@
+<link rel="stylesheet" href="/css/card.css">
 <%- include('../includes/header.ejs',{pageTitle:pageTitle})%></head>
 
 <body>
-    <%- include('../includes/navbar.ejs')%>
+    <%- include('../includes/navbar.ejs',{isLoggedin:isLoggedin})%>
+
     <p>Inside sample1</p>
 
+
+    <%- include('../includes/post.ejs',{error:error} )%>
+    <%if(post.length==0){%>
+    <p>No post to show</p>
+    <%}else{%>
+    <% post.forEach(post=>{  %>
+    <%- include('../includes/card.ejs',{post:post})%>
+    <% }); %>
+
+
+    <%}%>
     <%- include('../includes/footer.ejs')%>

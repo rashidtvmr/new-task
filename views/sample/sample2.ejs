@@ -1,7 +1,7 @@
 <%- include('../includes/header.ejs',{pageTitle:pageTitle})%></head>
 
 <body>
-    <%- include('../includes/navbar.ejs')%>
+    <%- include('../includes/navbar.ejs',{isLoggedin:isLoggedin})%>
     <p>Inside sample2</p>
-
+    <%- include('../includes/chart.ejs',{chartData:chartData})%>
     <%- include('../includes/footer.ejs')%>

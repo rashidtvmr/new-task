@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controller/sample");
-
-router.get("/", controller.getIndex);
-router.get("/sample1", controller.getSample1);
-router.get("/sample2", controller.getSample2);
+const auth = require("../middleware/auth");
+const un_auth = require("../middleware/un-auth");
+router.get("/", un_auth, controller.getIndex);
+router.get("/sample1", auth, controller.getSample1);
+router.get("/sample2", auth, controller.getSample2);
 module.exports = router;

@@ -1,0 +1,85 @@
+<div class="post bg-light shadow p-1">
+    <div class="post-profile">
+        <div class="profile-image">
+            <img class="profile-image-img" src="<%=post.postedby.avatar%>" alt="profile">
+        </div>
+        <span class="profile-name"><%=post.postedby.uname%></span>
+
+    </div>
+    <hr>
+    <div class="post-body">
+        <span>
+            <%=post.content%>
+        </span>
+        <div class="post-body-img">
+            <img class="thumbnail rounded" src="<%=post.imgUrl%>" alt="No Image to show">
+        </div>
+    </div>
+    <hr>
+    <div class="post-footer">
+        <div class="showCmtBtn float-left" onclick="showComments(event)"><span>show comment</span></div>
+        <div class="cmtbtn float-right" onclick="showCommentBox(event)">
+            <p>comment</p>
+        </div>
+
+        <div class="cmt-form" class="cmt-form">
+            <form action="/user/postcmnt" method="post">
+                <input type="button" value="Cancel" onclick="showCommentbtn(event)">
+                <input type="text" name="comment-text" id="">
+                <input type="submit" value="comment">
+
+            </form>
+        </div>
+        <div class="posted-cmt">
+            <span class="badge-sm badge-danger badge-pill float-left  mb-5" onclick="hideComment(event)">&times;</span>
+            <ul>
+                <li>
+                    <span class="font-weight-bolder">Name</span>:<span>comment</span>
+                </li>
+                <li>
+                    <span class="font-weight-bolder">Name</span>:<span>comment</span>
+                </li>
+                <li>
+                    <span class="font-weight-bolder">Name</span>:<span>comment</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    showComments = (e) => {
+        let selectedCard = e.target.parentElement.parentElement;
+        let children = selectedCard.children;
+        selectedCard.style.height = "auto";
+        children[0].style.display = "none";
+        children[1].style.display = "none";
+        children[2].style.display = "none";
+        children[3].style.display = "block";
+    }
+    showCommentbtn = (e) => {
+        let selectedCard = e.target.parentElement.parentElement.parentElement;
+        let children = selectedCard.children;
+        selectedCard.style.height = "5%";
+        children[2].style.display = "none";
+        children[3].style.display = "none";
+        children[1].style.display = "inline-block";
+        children[0].style.display = "inline-block";
+    }
+    showCommentBox = (e) => {
+        let selectedCard = e.target.parentElement.parentElement;
+        let children = selectedCard.children;
+        selectedCard.style.height = "7%";
+        children[0].style.display = "none";
+        children[1].style.display = "none";
+        children[2].style.display = "inline-block";
+    }
+    hideComment = (e) => {
+        let selectedCard = e.target.parentElement.parentElement;
+        let children = selectedCard.children;
+        selectedCard.style.height = "5%";
+        children[2].style.display = "none";
+        children[3].style.display = "none";
+        children[1].style.display = "inline-block";
+        children[0].style.display = "inline-block";
+    }
+</script>

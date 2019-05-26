@@ -1,7 +1,10 @@
 <%- include('includes/header.ejs',{pageTitle:pageTitle})%>
-</head>
 
-<body>
-    <%- include('includes/navbar.ejs')%>
-    <p>Inside index</p>
+<body style="text-align:center">
+    <%- include('includes/backdrop.ejs')%>
+    <%- include('includes/model.ejs',{error:error})%>
+    <%- include('includes/navbar.ejs',{isLoggedin:isLoggedin})%>
+
     <%- include('includes/footer.ejs')%>
+
+</body>
