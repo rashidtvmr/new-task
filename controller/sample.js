@@ -16,9 +16,14 @@ module.exports.getSample1 = (req, res, next) => {
       model: "users",
       select: "uname avatar"
     })
+    .populate({
+      path: "comments._id",
+      model: "users",
+      select: "uname avatar"
+    })
     .exec()
     .then(result => {
-      console.log(result);
+      //console.log(result);
       return res.render("sample/sample1", {
         pageTitle: "Sample1",
         error: false,

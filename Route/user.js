@@ -35,6 +35,7 @@ router.post(
   ],
   userController.uploadPost
 );
-
+///user/postcmnt/<%=post._id%>
+router.post("/postcmnt/:postId", userController.postComment);
 router.get("/logout", userController.getLogout);
 module.exports = router;

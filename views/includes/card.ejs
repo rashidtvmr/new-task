@@ -23,9 +23,9 @@
         </div>
 
         <div class="cmt-form" class="cmt-form">
-            <form action="/user/postcmnt" method="post">
+            <form action="/user/postcmnt/<%=post._id%>" method="post">
                 <input type="button" value="Cancel" onclick="showCommentbtn(event)">
-                <input type="text" name="comment-text" id="">
+                <input type="text" name="cmntBody">
                 <input type="submit" value="comment">
 
             </form>
@@ -33,19 +33,30 @@
         <div class="posted-cmt">
             <span class="badge-sm badge-danger badge-pill float-left  mb-5" onclick="hideComment(event)">&times;</span>
             <ul>
+
+                <%post.comments.forEach(comment=>{%>
                 <li>
-                    <span class="font-weight-bolder">Name</span>:<span>comment</span>
+
+                    <script>
+
+                    </script>
+                    <div class="comment-section">
+                        <div class="cmnt-profile float-left border d-inline">
+                            <img class="cmnt-avatar thumbnail" src="<%=comment._id.avatar%>" alt="No Pic">
+                        </div>
+                        <div class="cmnt-body float-left">
+                            <h5 class=" d-inline" style="font-size:20px"><%=comment._id.uname%></h5>
+                            <p class=" d-block" style="font-size:16px"><%=comment.commentBody%></p>
+                        </div>
+                    </div>
                 </li>
-                <li>
-                    <span class="font-weight-bolder">Name</span>:<span>comment</span>
-                </li>
-                <li>
-                    <span class="font-weight-bolder">Name</span>:<span>comment</span>
-                </li>
+
+                <%});%>
             </ul>
         </div>
     </div>
 </div>
+
 <script>
     showComments = (e) => {
         let selectedCard = e.target.parentElement.parentElement;
