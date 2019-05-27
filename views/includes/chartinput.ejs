@@ -1,0 +1,19 @@
+ <%if(error){%>
+ <div class="alert alert-sm alert-danger"><%=error%></div>
+ <%}%>
+<div class="chart-post border rounded shadow">
+   <form method="POST" action="/user/chartdata">
+        <input placeholder="X-Value" class="label" type="text" name="xvalue">
+        <input placeholder="Y-Values" class="value" type="text" name="yvalue">
+        <select class="chart-type form-control form-control-md" name="ctype">
+            <option value="doughnut">Doughnut</option>
+            <option value="bar">Bar</option>
+            <option value="pie">Pie</option>
+            <option value="line">Line</option>
+            <option value="radar">Radar</option>
+            <option value="scatter" disabled>Scatter</option>
+            <option value="bubble" disabled>Bubble</option>
+        </select>
+        <input type="submit" class="btn" value="Post" onclick="showChartBtn()">
+    </form>
+</div>

@@ -1,7 +1,25 @@
-<%- include('../includes/header.ejs',{pageTitle:pageTitle})%></head>
+<%- include('../includes/header.ejs',{pageTitle:pageTitle})%>
+<link rel="stylesheet" href="/css/card.css">
+<link rel="stylesheet" href="/css/chart.css">
+</head>
+<script>
+    let ctx;
+    let myChart;
+    let varibale;
+    let ctype, xvalue, yvalue, i = 0;
+</script>
+<% var i=0;%>
 
 <body>
     <%- include('../includes/navbar.ejs',{isLoggedin:isLoggedin})%>
-    <p>Inside sample2</p>
-    <%- include('../includes/chart.ejs',{chartData:chartData})%>
+    <%- include('../includes/chartinput.ejs',{error:false})%>
+    <%if(data.length==0){%>
+    <p>No Chart to show</p>
+    <%}else{%>
+    <%data.forEach(data=>{%>
+    <%- include('../includes/chartpost.ejs',{data:data,i:i})%>
+    <% i++;%>
+    <%});%>
+    <%}%>
+
     <%- include('../includes/footer.ejs')%>

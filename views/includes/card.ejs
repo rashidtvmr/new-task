@@ -24,22 +24,22 @@
 
         <div class="cmt-form" class="cmt-form">
             <form action="/user/postcmnt/<%=post._id%>" method="post">
-                <input type="button" value="Cancel" onclick="showCommentbtn(event)">
-                <input type="text" name="cmntBody">
-                <input type="submit" value="comment">
+                <input type="button" class="btn btn-danger" value="Cancel" onclick="showCommentbtn(event)">
+                <input type="text" class="input" name="cmntBody">
+                <input type="submit" class="btn btn-primary" value="comment">
 
             </form>
         </div>
         <div class="posted-cmt">
             <span class="badge-sm badge-danger badge-pill float-left  mb-5" onclick="hideComment(event)">&times;</span>
             <ul>
-
+                <%if(post.comments.length==0){%>
+                <li>
+                    <p>No comment to show</p>
+                </li>
+                <%}else{%>
                 <%post.comments.forEach(comment=>{%>
                 <li>
-
-                    <script>
-
-                    </script>
                     <div class="comment-section">
                         <div class="cmnt-profile float-left border d-inline">
                             <img class="cmnt-avatar thumbnail" src="<%=comment._id.avatar%>" alt="No Pic">
@@ -52,6 +52,7 @@
                 </li>
 
                 <%});%>
+                <%}%>
             </ul>
         </div>
     </div>
@@ -70,7 +71,10 @@
     showCommentbtn = (e) => {
         let selectedCard = e.target.parentElement.parentElement.parentElement;
         let children = selectedCard.children;
+        let x = window.matchMedia("(min-width:50rem)");
+        // if (x.matches) {
         selectedCard.style.height = "5%";
+        // }
         children[2].style.display = "none";
         children[3].style.display = "none";
         children[1].style.display = "inline-block";
@@ -79,7 +83,12 @@
     showCommentBox = (e) => {
         let selectedCard = e.target.parentElement.parentElement;
         let children = selectedCard.children;
-        selectedCard.style.height = "7%";
+        let x = window.matchMedia("(min-width:50rem)");
+        if (x.matches) {
+            selectedCard.style.height = "7%";
+        } else {
+            selectedCard.style.height = "7%";
+        }
         children[0].style.display = "none";
         children[1].style.display = "none";
         children[2].style.display = "inline-block";

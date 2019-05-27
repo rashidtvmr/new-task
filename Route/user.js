@@ -38,6 +38,9 @@ router.post(
 );
 ///user/postcmnt/<%=post._id%>
 router.post("/postcmnt/:postId", userController.postComment);
+// /user/postcmntinchart/<%=data._id%>
+router.post("/postcmntinchart/:chartId", userController.postCommentOfChart);
+
 router.get("/logout", userController.getLogout);
 ///user/postrandom
 router.post("/postrandombyme", randomController.postRandombyme);
@@ -47,4 +50,5 @@ router.post("/cmntrandombyme", randomController.postRandomCmntbyme);
 
 router.post("/cmntrandom", randomController.postRandomCmnt);
 router.post("/postrandom", randomController.postRandom);
+router.post("/chartdata", userController.postChartdata);
 module.exports = router;

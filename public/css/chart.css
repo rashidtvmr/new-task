@@ -1,0 +1,38 @@
+.chart-post {
+    font-weight: bold;
+    text-align: center;
+    width: 90%;
+    height: auto;
+    border: 1px solid black;
+    padding: 5px;
+    margin: auto;
+}
+
+.chart-post input {
+    margin: 2px;
+    padding: 5px 10px;
+    border: 1px solid blue;
+    width: 100%;
+    outline: none;
+}
+
+.chart-post input[type='submit'] {
+    width: 60%;
+    font-weight: bold;
+
+}
+
+.chart-post input[type='submit']:hover {
+    background: black;
+    color: white;
+}
+
+@media(min-width:50rem) {
+    .chart-post {
+        margin: auto;
+        width: 50%;
+        height: auto;
+        border: 1px solid black;
+        padding: 5px;
+    }
+}

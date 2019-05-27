@@ -1,5 +1,5 @@
 let faker = require("faker");
-let chart = require("../model/chart");
+let Chart = require("../model/chart");
 const Post = require("../model/post");
 
 module.exports.getIndex = (req, res, next) => {
@@ -28,8 +28,7 @@ module.exports.getSample1 = (req, res, next) => {
         pageTitle: "Sample1",
         error: false,
         post: result,
-        isLoggedin: req.session.isLoggedin,
-        chartData: chart.arrayElement
+        isLoggedin: req.session.isLoggedin
       });
     })
     .catch(err => {
@@ -37,9 +36,28 @@ module.exports.getSample1 = (req, res, next) => {
     });
 };
 module.exports.getSample2 = (req, res, next) => {
-  res.render("sample/sample2", {
-    pageTitle: "Sample2",
-    isLoggedin: req.session.isLoggedin,
-    chartData: chart.arrayElement
-  });
+  Chart.find({})
+    .populate({
+      path: "creator",
+      model: "users",
+      select: "uname avatar"
+    })
+    .populate({
+      path: "comments._id",
+      model: "users",
+      select: "uname avatar"
+    })
+    .then(result => {
+      if (result) {
+        console.log(result);
+        res.render("sample/sample2", {
+          pageTitle: "Sample2",
+          data: result,
+          isLoggedin: req.session.isLoggedin
+        });
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
