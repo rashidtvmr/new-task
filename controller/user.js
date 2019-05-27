@@ -14,7 +14,6 @@ module.exports.postSignup = async (req, res, next) => {
     });
   }
   const uname = req.body.uname;
-  let userResult;
   const user = new User({
     uname: uname,
     avatar: faker.image.avatar()
@@ -78,23 +77,6 @@ module.exports.postComment = (req, res, next) => {
   })
     .then(result => {
       res.redirect("/sample1");
-    })
-    .catch(err => {
-      console.log(err);
-    });
-};
-module.exports.postRandom = (req, res, next) => {
-  const post = Post({
-    postedby: req.session.user._id,
-    content: faker.lorem.sentence(),
-    imgUrl: faker.image.image()
-  });
-  return post
-    .save()
-    .then(result => {
-      if (result) {
-        return res.status(200).redirect("/sample1");
-      }
     })
     .catch(err => {
       console.log(err);

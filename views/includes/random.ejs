@@ -5,13 +5,23 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="data">
         <div class="dropdown-item">
-            <form action="/user/postrandom" method="post">
-                <input type="submit" class="btn " value="Random Post">
+            <form action="/user/postrandombyme" method="post">
+                <input type="submit" class="btn " value="Random Post by you">
+            </form>
+        </div>
+        <div class="dropdown-item">
+            <form action="/user/cmntrandombyme" method="post">
+                <input type="submit" class="btn" value="Random Comment by you">
             </form>
         </div>
         <div class="dropdown-item">
             <form action="/user/cmntrandom" method="post">
                 <input type="submit" class="btn" value="Random Comment">
+            </form>
+        </div>
+        <div class="dropdown-item">
+            <form action="/user/postrandom" method="post">
+                <input type="submit" class="btn" value="Random Post">
             </form>
         </div>
     </div>

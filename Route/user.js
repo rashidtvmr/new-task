@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { body } = require("express-validator/check");
 const userController = require("../controller/user");
+const randomController = require("../controller/random");
 ////user/signup
 router.post(
   "/signup",
@@ -39,5 +40,11 @@ router.post(
 router.post("/postcmnt/:postId", userController.postComment);
 router.get("/logout", userController.getLogout);
 ///user/postrandom
-router.post("/postrandom", userController.postRandom);
+router.post("/postrandombyme", randomController.postRandombyme);
+///user/cmntrandom
+
+router.post("/cmntrandombyme", randomController.postRandomCmntbyme);
+
+router.post("/cmntrandom", randomController.postRandomCmnt);
+router.post("/postrandom", randomController.postRandom);
 module.exports = router;
