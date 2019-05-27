@@ -25,7 +25,6 @@ module.exports.postSignup = async (req, res, next) => {
     req.session.user = result;
     req.session.isLoggedin = true;
   }
-  console.log("req.sesion", req.session);
   res.redirect("/sample1");
   // res.render("sample/sample1", {
   //   pageTitle: "Sample1",
@@ -84,17 +83,20 @@ module.exports.postComment = (req, res, next) => {
       console.log(err);
     });
 };
-Post.find()
-  .populate({ path: "postedby", model: "users" })
-  .populate({
-    path: "comments._id",
-    model: "users",
-    select: "uname avatar"
-  })
-  .exec()
-  .then(result => {
-    console.log("test", result);
-  })
-  .catch(err => {
-    console.log(err);
+module.exports.postRandom = (req, res, next) => {
+  const post = Post({
+    postedby: req.session.user._id,
+    content: faker.lorem.sentence(),
+    imgUrl: faker.image.image()
   });
+  return post
+    .save()
+    .then(result => {
+      if (result) {
+        return res.status(200).redirect("/sample1");
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};

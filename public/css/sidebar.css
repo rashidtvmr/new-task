@@ -1,0 +1,42 @@
+.sidebar {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    transition: all 1s ease;
+    z-index: 20000;
+
+}
+
+.sidebar ul li {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.cancel-sidebar a {
+    cursor: pointer;
+}
+
+.cancel-sidebar a:hover {
+    background: red;
+    color: white;
+}
+
+.backdrop-sidebar {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.4);
+    z-index: 100;
+}

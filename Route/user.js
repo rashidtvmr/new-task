@@ -38,4 +38,6 @@ router.post(
 ///user/postcmnt/<%=post._id%>
 router.post("/postcmnt/:postId", userController.postComment);
 router.get("/logout", userController.getLogout);
+///user/postrandom
+router.post("/postrandom", userController.postRandom);
 module.exports = router;

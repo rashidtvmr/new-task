@@ -1,3 +1,4 @@
+<div class="backdrop-sidebar" onclick="backdropClicked()"></div>
 <nav class="navbar navbar-expand-lg navbar-light bg-warning fixed-top">
     <button class="navbar-toggler" type="button" onclick="showSidebar()">
         <span class="navbar-toggler-icon"></span>
@@ -22,22 +23,21 @@
     </div>
 </nav>
 
-            <div class="sidebar bg-dark shadow-lg" style="display:none">
-
-                <div class="mb-5 p-1 " onclick="showSidebar()">
+<div class="sidebar bg-light shadow-lg" style="display: none">
+    <div class="cancel-sidebar mb-5 p-1" onclick="showSidebar(event)">
                     <a class="close badge badge-secondary">&times;</a>
-                </div>
-                <ul class="navbar-nav m-auto font-weight-bolder">
+    </div>
+    <ul class="navbar-nav m-auto font-weight-bold">
 
-                    <li class="home nav-item">
+                    <li class="home nav-item border">
                         <a class="nav-link" href="/sample1">Sample1</a>
                     </li>
-                    <li class="home nav-item">
+                    <li class="home nav-item border">
                         <a class="nav-link" href="/sample2">Sample2</a>
                     </li>
 
                     <%if(isLoggedin){%>
-            <li class="signup nav-item">
+            <li class="signup nav-item border">
                 <a class="nav-link" href="/user/logout">Logout</a>
             </li>
             <%}%>

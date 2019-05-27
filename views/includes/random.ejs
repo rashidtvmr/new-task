@@ -1,0 +1,18 @@
+<div class="dropdown">
+    <button class="btn btn-success dropdown-toggle" data-toggle="dropdown" id="data" aria-haspopup="true"
+        aria-expanded="false">
+        Generate Random
+    </button>
+    <div class="dropdown-menu" aria-labelledby="data">
+        <div class="dropdown-item">
+            <form action="/user/postrandom" method="post">
+                <input type="submit" class="btn " value="Random Post">
+            </form>
+        </div>
+        <div class="dropdown-item">
+            <form action="/user/cmntrandom" method="post">
+                <input type="submit" class="btn" value="Random Comment">
+            </form>
+        </div>
+    </div>
+</div>

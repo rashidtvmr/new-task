@@ -2,11 +2,9 @@
 <%- include('../includes/header.ejs',{pageTitle:pageTitle})%></head>
 
 <body>
+
     <%- include('../includes/navbar.ejs',{isLoggedin:isLoggedin})%>
-
-    <p>Inside sample1</p>
-
-
+    <%- include('../includes/random.ejs')%>
     <%- include('../includes/post.ejs',{error:error} )%>
     <%if(post.length==0){%>
     <p>No post to show</p>
