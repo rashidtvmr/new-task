@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const session = require("express-session");
 const MongodbSession = require("connect-mongodb-session")(session);
 const store = new MongodbSession({
-  uri: localURI,
+  uri: URI,
   collection: "sessions"
 });
 app.use(
@@ -38,7 +38,7 @@ app.use("/user", userRoute);
 app.use(basicRoute);
 
 mongoose
-  .connect(localURI)
+  .connect(URI)
   .then(result => {
     app.listen(PORT, () => {
       console.log(`Listening on ${PORT}`);
