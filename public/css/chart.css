@@ -14,7 +14,7 @@
     width: 90%;
     overflow: auto;
     flex-wrap: inherit;
-    margin: 2px auto;
+    margin: 2px 5%;
     margin-top: 5px;
     height: 54vh;
 }
@@ -45,5 +45,16 @@
         height: auto;
         border: 1px solid black;
         padding: 5px;
+    }
+
+    .post-chart {
+        border-radius: 10px;
+        /* position: relative; */
+        width: 50%;
+        overflow: auto;
+        flex-wrap: inherit;
+        margin: 5px auto;
+        /* margin-top: 5px; */
+        height: auto;
     }
 }
