@@ -1,7 +1,7 @@
  <%if(error){%>
  <div class="alert alert-sm alert-danger"><%=error%></div>
  <%}%>
-<div class="chart-post border rounded shadow">
+<div class="chart-post border rounded shadow" data-aos="fade-up-right">
    <form method="POST" action="/user/chartdata">
         <input placeholder="X-Value" class="label" type="text" name="xvalue">
         <input placeholder="Y-Values" class="value" type="text" name="yvalue">

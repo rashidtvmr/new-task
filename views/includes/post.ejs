@@ -1,7 +1,7 @@
  <%if(error){%>
- <div class="alert alert-sm alert-danger"><%=error%></div>
+ <div class="alert alert-sm alert-danger" data-aos="fade-down-left"><%=error%></div>
  <%}%>
-<div class="post-post">
+<div class="post-post" data-aos="fade-down">
    
     <form action="/user/post" method="POST">
         <input placeholder="Image URL" type="text" name="img">
