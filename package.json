@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node ./app",
-    "devstart":"nodemon ./app",
+    "start": "node ./app",
+    "devstart": "nodemon ./app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,7 +14,6 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-mongodb-session": "^2.1.1",
-    "csurf": "^1.10.0",
     "ejs": "^2.6.1",
     "express": "^4.17.0",
     "express-session": "^1.16.1",

@@ -4,9 +4,10 @@
     width: 90%;
     overflow: auto;
     flex-wrap: inherit;
-    margin: auto;
-    margin-top: 5px;
-    height: 70vh;
+    margin: 5px auto;
+    /* margin-top: 5px; */
+    height: 75vh;
+    padding: 5px;
 }
 
 .post-profile {

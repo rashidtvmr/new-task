@@ -8,6 +8,17 @@
     margin: auto;
 }
 
+.post-chart {
+    border-radius: 10px;
+    position: relative;
+    width: 90%;
+    overflow: auto;
+    flex-wrap: inherit;
+    margin: 2px auto;
+    margin-top: 5px;
+    height: 54vh;
+}
+
 .chart-post input {
     margin: 2px;
     padding: 5px 10px;
